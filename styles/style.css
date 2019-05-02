@@ -1,0 +1,94 @@
+.carousel {
+
+}
+
+    .carousel__container {
+        overflow-y: auto; /* add scrollbar */
+        -webkit-overflow-scrolling: touch; /* make scrollbar smooth on mobile */
+        scroll-snap-type: x mandatory; /* init snapping */
+    }
+        .carousel__ribbon {
+            display: inline-flex;
+            align-items: flex-start;
+            vertical-align: top;
+            padding-left: 20px;   /* should be equal to */
+            padding-right: 20px;  /* container padding */
+        }
+            .carousel__item {
+                flex-shrink: 0;
+                margin-left: 20px;
+                scroll-snap-align: center; /* snap in the middle of each item */
+            }
+
+            .carousel__item:first-child {
+                margin-left: 0;
+            }
+
+
+    .carousel__control {
+        display: none; /* swipe by finger */
+    }
+
+
+
+@media (min-width: 960px) {
+
+    .carousel {
+
+    }
+        .carousel__container {
+            scroll-snap-type: none; /* turn off snapping */
+        }
+            .carousel__ribbon {
+
+            }
+                .carousel__item {
+                    scroll-snap-align: none; /* turn off snapping */
+                }
+
+        .carousel--initialized .carousel__control {
+            display: block;
+            transition: opacity 0.1s ease,
+                        visibility 0.1s ease;
+        }
+
+        .carousel__control--disabled {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+    .carousel--search {
+        width: 700px;
+    }
+        .carousel--search .carousel__item {
+            width: 228px;
+            margin-right: 8px;
+        }
+
+        .carousel--search .carousel__item:last-child {
+            margin-right: 0;
+        }
+
+        .carousel--search .carousel__control {
+            top: 113px;
+        }
+
+
+
+    /* hide scrollbar and show controls if JavaScript works */
+    .carousel--initialized {
+
+    }
+        .carousel--initialized .carousel__container {
+            scrollbar-width: none; /* hide scrollbar in Firefox */
+            -ms-overflow-style: none; /* hide scrollbar in Edge */
+        }
+
+        .carousel--initialized .carousel__container::-webkit-scrollbar { /* hide scrollbar in webkit based browsers */
+            display: none;
+        }
+
+        .carousel--initialized .carousel__control {
+            display: block;
+        }
+}
