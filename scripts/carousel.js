@@ -35,8 +35,11 @@
     }
 
     /* Disable arrows on scroll */
-    $('.carousel__container').on('scroll', function () {
-        arrowsVisibility( $(this) );
+    $(document).ready(function () {
+
+        $('.carousel__container').on('scroll', function () {
+            arrowsVisibility( $(this) );
+        });
     });
 
     /* Disable arrows on page resize */
