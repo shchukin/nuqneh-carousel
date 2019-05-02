@@ -27,7 +27,7 @@
             $carouselContainer.siblings('.carousel__control--prev').removeClass('carousel__control--disabled');
         }
 
-        if( $carouselContainer.scrollLeft() === $carouselContainer.find('.carousel__ribbon').outerWidth() - $carouselContainer.outerWidth() ) {
+        if( $carouselContainer.scrollLeft() === Math.ceil($carouselContainer.find('.carousel__ribbon').outerWidth() - $carouselContainer.outerWidth() ) ) {
             $carouselContainer.siblings('.carousel__control--next').addClass('carousel__control--disabled');
         } else {
             $carouselContainer.siblings('.carousel__control--next').removeClass('carousel__control--disabled');
