@@ -38,16 +38,6 @@
     }
         .carousel__container {
             scroll-snap-type: none; /* turn off snapping */
-        }
-            .carousel__ribbon {
-
-            }
-                .carousel__item {
-                    scroll-snap-align: none; /* turn off snapping */
-                }
-
-        .carousel--initialized .carousel__control {
-            display: block;
             transition: opacity 0.1s ease,
                         visibility 0.1s ease;
         }
@@ -56,22 +46,14 @@
             opacity: 0;
             visibility: hidden;
         }
+            .carousel__ribbon {
 
-    .carousel--search {
-        width: 700px;
-    }
-        .carousel--search .carousel__item {
-            width: 228px;
-            margin-right: 8px;
-        }
+            }
+                .carousel__item {
+                    scroll-snap-align: none; /* turn off snapping */
+                }
 
-        .carousel--search .carousel__item:last-child {
-            margin-right: 0;
-        }
 
-        .carousel--search .carousel__control {
-            top: 113px;
-        }
 
 
 
